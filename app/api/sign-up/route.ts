@@ -49,7 +49,7 @@ export async function POST(request: Request) {
         verifyCodeExpires: expiryDate,
         isVerified: false,
         isAcceptingMessages: true,
-        messages: true,
+        messages: [],
       });
 
       await newUser.save();

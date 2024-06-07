@@ -12,7 +12,7 @@ async function dbConnect(): Promise<void> {
   }
 
   try {
-    const db = await mongoose.connect(process.env.MONGO_URI || "", {});
+    const db = await mongoose.connect(process.env.MONGODB_URI || "", {});
     connection.isConnected = db.connections[0].readyState;
   } catch (err) {
     process.exit(1);
