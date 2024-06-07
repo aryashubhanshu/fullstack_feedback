@@ -47,5 +47,14 @@ export async function GET(request: Request) {
       },
       { status: 200 }
     );
-  } catch (err) {}
+  } catch (err) {
+    console.log("An unexpected error occurred", err);
+    return Response.json(
+      {
+        success: false,
+        message: "Not Authenticated",
+      },
+      { status: 500 }
+    );
+  }
 }
