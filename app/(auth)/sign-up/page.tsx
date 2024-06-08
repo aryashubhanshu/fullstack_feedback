@@ -14,7 +14,6 @@ import { ApiResponse } from "@/types/ApiResponse";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -30,7 +29,7 @@ const Page = () => {
   const [isCheckingUsername, setIsCheckingUsername] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const debounced = useDebounceCallback(setUsername, 300);
+  const debounced = useDebounceCallback(setUsername, 500);
   const { toast } = useToast();
   const router = useRouter();
 
@@ -122,7 +121,7 @@ const Page = () => {
                   {isCheckingUsername && <Loader2 className="animate-spin" />}
                   <p
                     className={`text-sm ${
-                      usernameMessage === "Username is unique"
+                      usernameMessage === "Username available"
                         ? "text-green-500"
                         : "text-red-500"
                     }`}
